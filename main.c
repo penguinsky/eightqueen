@@ -1,13 +1,12 @@
 #include<stdio.h>
 #include"header.h"
 
-short board[BOARDSIZE][BOARDSIZE];
-
 int main(void) {
-	
-	initBoard();
-	calcPattern();
-	draw();
+	short board[BOARDSIZE][BOARDSIZE];
+	initBoard(board);
+
+	calcPattern(board);
+	draw(board);
 
 	return 0;
 }
