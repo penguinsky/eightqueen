@@ -10,5 +10,5 @@ bool getPattern(void);//記録したパターンからboardを再現する
 
 void initBoard(void);//boardを初期化(0埋め)する
 void calcPattern(void);//8クイーンを満たすパターンを全て計算し、setPattern()で記録する
-void draw(void);//記録したパターン全てをdrawboard()で描画する
-void drawboard(void);//boardから盤面を描画する
+void draw(void);//記録したパターン全てをdrawBoard()で描画する
+void drawBoard(void);//boardから盤面を描画する
