@@ -21,9 +21,15 @@
     <ClCompile Include="getPattern.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="setPattern.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
