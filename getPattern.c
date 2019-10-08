@@ -1,21 +1,17 @@
 #include "header.h"
+#include "Pattern.h"
 
 bool getPattern(short(*board)[BOARDSIZE]) {
-	int a, i, j = 0, Pattern[8] = { 0, 1, 2, 3, 4, 5, 6, 7 },
-		Pattern1[8][8] = {};
-	for (a = 0; a < 8; a++) {
-		for (i = 0; i < 8; i++) {
-			if (Pattern[a] == i) {
-				Pattern1[a][i] = 1;
+	initBoard(board);
 
-			}
-		}
+	static int memory_view = 0;
+	int a;
+	if (memory_view >= memory_now) {
+		return false;
 	}
-	for (i = 0; i < 8; i++) {
-		for (j = 0; j < 8; j++) {
-			printf("%d ", Pattern1[i][j]);
-		}
-		printf("\n");
+	for (a = 0; a < 8; a++) {
+		board[a][zipptr[memory_view][a]] = 2;
 	}
-	return 0;
+	memory_view++;
+	return true;
 }
