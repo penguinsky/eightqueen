@@ -123,9 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="calcBoard.c" />
     <ClCompile Include="draw.c" />
     <ClCompile Include="drawBoard.c" />
     <ClCompile Include="getPattern.c" />
+    <ClCompile Include="initBoard.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="setPattern.c" />
   </ItemGroup>
