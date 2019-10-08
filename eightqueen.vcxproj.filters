@@ -24,6 +24,12 @@
     <ClCompile Include="setPattern.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="draw.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="drawBoard.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">
