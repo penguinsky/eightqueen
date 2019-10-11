@@ -1,10 +1,11 @@
 #include"header.h"
 #include"Pattern.h"
+#include<stdlib.h>
 
 #define SIZE 100
 #define MAGNI_MAX 5
 int memory_now = 0;
-short(*zipptr)[BOARDSIZE] = 0;
+short(*zipptr)[BOARDSIZE] = NULL;
 
 bool setPattern(const short(*board)[BOARDSIZE]) {
 	static int size_magni;
