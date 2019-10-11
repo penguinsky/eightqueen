@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="calcBoard.c" />
+    <ClCompile Include="calcPattern.c" />
     <ClCompile Include="draw.c" />
     <ClCompile Include="drawBoard.c" />
     <ClCompile Include="getPattern.c" />
