@@ -12,9 +12,15 @@ bool setPattern(const short(*board)[BOARDSIZE]) {
 
 	if (memory_now >= SIZE * size_magni) {	//—e—Ê‚ª‘«‚è‚Ä‚È‚¢‚È‚ç
 		if (size_magni < MAGNI_MAX) {		//—e—Ê‚ÌŠù’è‚ÌÅ‘å’l‚ð’´‚¦‚È‚¢‚È‚ç
+			void* tmp;
 
 			int capacity = sizeof(short) * BOARDSIZE * SIZE * ++size_magni;
-			zipptr = (short(*)[BOARDSIZE])realloc((void*)zipptr, capacity);
+			tmp = realloc((void*)zipptr, capacity);
+
+			if (tmp == NULL)	//realloc()‚ªŽ¸”s‚µ‚½‚ç
+				return false;
+			else
+				zipptr = tmp;
 		}
 		else {
 			return false;
