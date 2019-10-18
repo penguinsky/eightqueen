@@ -40,3 +40,15 @@ void calcPattern(short(*board)[BOARDSIZE],int i,int j)
 		}
 	}
 }
+
+i行目のクイーンの位置を設定する。そのあと、SETQUEEN()で呼び出してクイーンを格納。
+void SETQUEEN(int queen[BOARDSIZE],int board[BOARDSIZE][BOARDSIZE],int i)
+{
+	int j;
+
+	if (i = BOARDSIZE)
+	{
+		
+	}
+	for()
+}
