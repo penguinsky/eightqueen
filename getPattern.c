@@ -5,13 +5,13 @@ bool getPattern(short(*board)[BOARDSIZE]) {
 	initBoard(board);
 
 	static int memory_view = 0;
-	int a;
+	int y;
 	if (memory_view >= memory_now) {
 		return false;
 	}
-	for (a = 0; a < 8; a++) {
-		int queen_pos = zipptr[memory_view][a];
-		board[a][queen_pos] = 2;
+	for (y = 0; y < 8; y++) {
+		int queen_pos = zipptr[memory_view][y];
+		board[queen_pos][y] = 2;
 	}
 	memory_view++;
 	return true;

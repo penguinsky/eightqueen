@@ -1,11 +1,11 @@
 #include"header.h"
 #include<stdio.h>
 void drawBoard(const short(*board)[BOARDSIZE]) {
-	int i, j;
+	int y, x;
 
-	for (i = 0; i < BOARDSIZE; i++) {
-		for (j = 0; j < BOARDSIZE; j++) {
-			if (board[i][j] == 2)
+	for (y = 0; y < BOARDSIZE; y++) {
+		for (x = 0; x < BOARDSIZE; x++) {
+			if (board[x][y] == 2)
 				printf("~");
 			else
 				printf("Z");

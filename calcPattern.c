@@ -20,13 +20,17 @@ void calcPattern(short(*board)[BOARDSIZE],int y)
 bool checkQueen(short(*board)[BOARDSIZE], int x, int y) {
 	bool ret = true;
 
-	for (int i = 1;y - i >= 0;i++) {
-		if (board[x - i][y - i] == 2)
-			if (x - i >= 0)ret = false;
-		if (board[x    ][y - i] == 2)
-			if (x     >= 0)ret = false;
-		if (board[x + i][y - i] == 2)
-			if (x + i >= 0)ret = false;
+	for (int i = 1;i <= y;i++) {
+		if (board[x][y - i] == 2)
+			ret = false;
+
+		if (x - i >= 0)
+			if (board[x - i][y - i] == 2)
+			       ret = false;
+
+		if (x + i < BOARDSIZE)
+			if (board[x + i][y - i] == 2)
+				ret = false;
 	}
 
 	return ret;

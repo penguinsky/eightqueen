@@ -3,7 +3,7 @@
 #include<stdlib.h>
 
 #define SIZE 100	//一度に確保する容量(short[BOARDSIZE]単位)
-#define MAGNI_MAX 5	//確保する容量の最大値
+#define MAGNI_MAX 50	//確保する容量の最大値
 int memory_now = 0;
 short(*zipptr)[BOARDSIZE] = NULL;
 
@@ -27,10 +27,10 @@ bool setPattern(const short(*board)[BOARDSIZE]) {
 		}
 	}
 
-	for (int i = 0; i < BOARDSIZE; i++)
-		for (int j = 0; i < BOARDSIZE; j++)
-			if (board[i][j] == 2) {
-				zipptr[memory_now][j] = i;
+	for (int x = 0; x < BOARDSIZE; x++)
+		for (int y = 0; x < BOARDSIZE; y++)
+			if (board[x][y] == 2) {
+				zipptr[memory_now][y] = x;
 				break;
 			}
 
