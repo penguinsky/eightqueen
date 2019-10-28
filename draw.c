@@ -1,8 +1,10 @@
 #include"header.h"
+#include<stdio.h>
 
 void draw(short(*board)[BOARDSIZE])
 {
 	while (getPattern(board) == true) {
-		drawboard(board);
+		drawBoard(board);
+		putchar('\n');
 	}
 }

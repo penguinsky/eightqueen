@@ -1,54 +1,33 @@
 #include"header.h"
 
-void calcPattern(short(*board)[BOARDSIZE],int i,int j) 
+bool checkQueen(short(*board)[BOARDSIZE], int x, int y);
+
+void calcPattern(short(*board)[BOARDSIZE],int y)
 {
-	int k;
-
-	for (k = 0;k < BOARDSIZE;k++) 
-	{
-		board[k][j] += 1;//縦処理
-		board[i][k] += 1;//横処理
-	}
-
-	if (i > j)
-	{
-		for (k = 0;k < BOARDSIZE - (i - j);k++)
-		{
-			board[k + (i - j)][k] += 1;//右下斜め（i>jのとき）
-		}
-	}
-	else
-	{
-		for (k = 0;k < BOARDSIZE - (j - i);k++)
-		{
-			board[k][k + (j - i)] += 1;//右下斜め（i<=jのとき）
-		}
-	}
-
-	if (i + j < BOARDSIZE)
-	{
-		for (k = 0;k <= i + j;k++)
-		{
-			board[i + j - k][k] += 1;//左下斜め（i+J< BOARDSIZEのとき）
-		}
-	}
-	else
-	{
-		for (k = i + j - BOARDSIZE + 1;k < BOARDSIZE;k++)
-		{
-			board[i + j - k][k] += 1;//左下斜め（i+j>= BOARDSIZEのとき）
+	for (int x = 0;x < BOARDSIZE;x++) {
+		if (checkQueen(board, x, y)) {
+			board[x][y] = 2;
+			if (y == BOARDSIZE - 1) {
+				setPattern(board);
+			} else {
+				calcPattern(board, y + 1);
+			}
+			board[x][y] = 0;
 		}
 	}
 }
 
-i行目のクイーンの位置を設定する。そのあと、SETQUEEN()で呼び出してクイーンを格納。
-void SETQUEEN(int queen[BOARDSIZE],int board[BOARDSIZE][BOARDSIZE],int i)
-{
-	int j;
+bool checkQueen(short(*board)[BOARDSIZE], int x, int y) {
+	bool ret = true;
 
-	if (i = BOARDSIZE)
-	{
-		
+	for (int i = 1;y - i >= 0;i++) {
+		if (board[x - i][y - i] == 2)
+			if (x - i >= 0)ret = false;
+		if (board[x    ][y - i] == 2)
+			if (x     >= 0)ret = false;
+		if (board[x + i][y - i] == 2)
+			if (x + i >= 0)ret = false;
 	}
-	for()
+
+	return ret;
 }
