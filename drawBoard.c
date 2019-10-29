@@ -12,6 +12,4 @@ void drawBoard(const short(*board)[BOARDSIZE]) {
 		}
 		printf("\n");
 	}
-
-	return 0;
 }
