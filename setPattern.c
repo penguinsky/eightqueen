@@ -27,10 +27,10 @@ bool setPattern(const short(*board)[BOARDSIZE]) {
 		}
 	}
 
-	for (int i = 0; i < BOARDSIZE; i++)
-		for (int j = 0; i < BOARDSIZE; i++)
-			if (board[i][j] == 2) {
-				zipptr[memory_now][j] = i;
+	for (int x = 0; x < BOARDSIZE; x++)
+		for (int y = 0; x < BOARDSIZE; y++)
+			if (board[x][y] == 2) {
+				zipptr[memory_now][y] = x;
 				break;
 			}
 
