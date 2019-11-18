@@ -5,7 +5,7 @@ void drawBoard(const short(*board)[BOARDSIZE]) {
 
 	for (y = 0; y < BOARDSIZE; y++) {
 		for (x = 0; x < BOARDSIZE; x++) {
-			if (board[x][y] == 2)
+			if (board[x][y] == QUEEN)
 				printf("~");
 			else
 				printf("Z");
