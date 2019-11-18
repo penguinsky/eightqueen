@@ -12,7 +12,7 @@ void calcPattern(short(*board)[BOARDSIZE],int y)
 			} else {
 				calcPattern(board, y + 1);
 			}
-			board[x][y] = 0;
+			board[x][y] = NONE;
 		}
 	}
 }
