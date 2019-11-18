@@ -9,7 +9,7 @@ bool getPattern(short(*board)[BOARDSIZE]) {
 	if (memory_view >= memory_now) {
 		return false;
 	}
-	for (y = 0; y < 8; y++) {
+	for (y = 0; y < BOARDSIZE; y++) {
 		int queen_pos = zipptr[memory_view][y];
 		board[queen_pos][y] = QUEEN;
 	}
